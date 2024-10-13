@@ -2,7 +2,8 @@
 
 ![students](https://github.com/user-attachments/assets/63296c73-5b0a-43dc-961a-27b44be53216)
 
-Overview
+## Overview
+
 This project aims to predict student dropout rates using Machine Learning Models with regularization, optimization, and Error analysis techniques used in machine learning to improve models' performance, convergence speed, and efficiency. The dataset used is processed and analyzed to train neural networks with different optimization techniques `(Adam and RMSProp)` to enhance model performance and generalization. In the project, I evaluated the rate of the students graduated and the students dropped out. I used publicly available dataset suitable for the project and then Implemented two types of Models, a vanilla model without any optimization techniques and another model with several optimization techniques.
 
 ## Model Development and Optimization Techniques
