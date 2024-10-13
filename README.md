@@ -84,7 +84,7 @@ L2 Regularization, though it has excellent recall, does not surpass the L1 model
 Thus, L1 Regularization offers the best performance overall compared to the Vanilla model, especially considering its superior test accuracy and F1 Score.
 
 
-Here’s the performance comparison in a similar format:
+Here’s the performance comparison:
 
 | Model            | Test Loss  | Accuracy  | Precision | Recall (Sensitivity) | F1 Score |
 |------------------|------------|-----------|-----------|----------------------|----------|
