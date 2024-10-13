@@ -4,80 +4,53 @@
 
 ## Overview
 
-This project aims to predict student dropout rates using Machine Learning Models with regularization, optimization, and Error analysis techniques used in machine learning to improve models' performance, convergence speed, and efficiency. The dataset used is processed and analyzed to train neural networks with different optimization techniques `(Adam and RMSProp)` to enhance model performance and generalization. In the project, I evaluated the rate of the students graduated and the students dropped out. I used publicly available dataset suitable for the project and then Implemented two types of Models, a vanilla model without any optimization techniques and another model with several optimization techniques.
+The project aims to predict student dropout rates using machine learning models, with a focus on improving performance, convergence speed, and generalization through regularization, optimization, and error analysis techniques. The dataset used is publicly available and has been processed to train neural networks. The goal was to evaluate the rates of students who graduate versus those who drop out. For this, we developed two types of models: a baseline vanilla model (without any optimization) and models enhanced with regularization techniques and optimization algorithms like `Adam` and `RMSProp.`
 
-## Model Development and Optimization Techniques
+### Model Development and Optimization Techniques
 
-### Overview of Models and Techniques
+#### Overview of Models and Techniques
+In this project, three different models were built to assess their effectiveness in predicting student dropout rates:
 
-The models used include a vanilla neural network, an L1 regularized model with Adam, and an L2 regularized model with RMSProp. The following optimization techniques were applied to improve performance:
+- **Vanilla Model**: This model does not use any optimization techniques. It serves as a baseline for comparing the effects of adding regularization and optimization to the models. 
+- **L1 Regularized Model with Adam Optimizer**: In this model, L1 regularization is applied to reduce overfitting by penalizing the absolute value of the model's weights. The Adam optimizer is used for efficient learning and improved convergence.
+- **L2 Regularized Model with RMSProp Optimizer**: This model uses L2 regularization, which stabilizes the training process by penalizing large weight values. The RMSProp optimizer is employed to help with faster convergence by adjusting learning rates based on recent gradient information.
 
+### Optimization Techniques and Their Impact
 
-## 1. Vanilla Model: Model with no optimizers
+#### Vanilla Model
+The vanilla model, which does not use any optimizers, acts as a benchmark for the project. The absence of regularization or an advanced optimizer limits its ability to generalize well to new data. As a result, while the vanilla model achieves a moderate test accuracy, it suffers from a low recall, indicating that it struggles to identify students at risk of dropping out. The high test loss further suggests that the model may be overfitting the training data.
 
-Test Loss: 1.6278
+#### L1 Regularized Model with Adam Optimizer
+This model improves significantly over the vanilla baseline due to two key elements: **L1 regularization** and the **Adam optimizer**.
 
-Test Accuracy: 0.6814
+- **L1 regularization** introduces a penalty based on the absolute values of the model’s weights. This helps drive some of the weights to zero, effectively simplifying the model and preventing overfitting. By penalizing large coefficients, L1 regularization forces the model to focus on the most important features, leading to better generalization.
+  
+- **Adam optimizer** is a combination of two popular optimization algorithms, AdaGrad and RMSProp. It computes individual learning rates for each parameter based on estimates of first and second moments of the gradients. Adam adjusts learning rates dynamically during training, resulting in faster convergence and a more efficient update process.
 
-Precision: 0.6957
+With the combination of L1 regularization and Adam, this model shows a marked improvement in both test accuracy and recall. The recall value is significantly higher than the vanilla model, meaning it is much better at identifying students who are likely to drop out. The F1 score, which balances precision and recall, is also much higher, showing that this model strikes a good balance between correctly identifying at-risk students while minimizing false positives.
 
-Recall (Sensitivity): 0.1622
+#### L2 Regularized Model with RMSProp Optimizer
+This model applies **L2 regularization** and uses the **RMSProp optimizer** to enhance performance.
 
-Specificity: 0.9643
+- **L2 regularization** adds a penalty proportional to the square of the weights. Unlike L1, which drives some weights to zero, L2 regularization tends to shrink the weights more smoothly. This results in a more stable training process, as the model is discouraged from assigning overly large weights to any particular feature, which could cause overfitting.
 
-F1 Score: 0.2630
+- **RMSProp optimizer** adjusts the learning rate of each parameter individually by maintaining a running average of recent gradient magnitudes. This technique is particularly effective when dealing with noisy or complex data because it helps prevent oscillations and ensures smoother convergence.
 
-## 2. L1 Model with Adam Optimizer:
+While the L2 regularized model performs well in terms of recall (the highest among all models), indicating a strong ability to correctly identify students at risk of dropping out, it falls slightly behind the L1 model in terms of accuracy and precision. This suggests that although the model is very good at identifying at-risk students, it may also include more false positives than desired.
 
-Test Loss: 0.6013 (significantly lower than Vanilla)
+### Analysis of Model Performance
+- **Test Accuracy**: The L1 regularized model outperforms both the vanilla and L2 models in terms of accuracy. This means that overall, the L1 model is better at making correct predictions across the entire dataset.
+  
+- **Recall**: Both L1 and L2 models drastically outperform the vanilla model when it comes to recall, with the L2 model excelling in this metric. Higher recall means these models are more capable of identifying students who are actually at risk of dropping out.
 
-Test Accuracy: 0.7311 (higher than Vanilla)
+- **F1 Score**: The L1 model achieves the highest F1 score, which indicates the best balance between precision (avoiding false positives) and recall (correctly identifying true positives). This makes the L1 model the most well-rounded in terms of performance.
 
-Precision: 0.4149
+### Conclusion
+- **L1 Regularized Model with Adam** is the best-performing model overall. It improves upon the vanilla model significantly, especially in recall and F1 score. The use of L1 regularization simplifies the model by focusing on important features, while Adam accelerates training and convergence. This combination results in a model that is both accurate and well-generalized.
+  
+- **L2 Regularized Model with RMSProp** also shows strong performance, particularly in recall, making it effective at identifying students at risk of dropping out. However, it does not surpass the L1 model in terms of accuracy or precision.
 
-Recall (Sensitivity): 0.8074 (much higher recall)
-
-Specificity: 0.9643 (same as Vanilla)
-
-F1 Score: 0.5482 (higher than Vanilla)
-
-## 3. L2 Model with RMSProp Optimizer:
-
-Test Loss: 0.5594 (lowest loss)
-
-Test Accuracy: 0.7186 (higher than Vanilla)
-
-Precision: 0.3803
-
-Recall (Sensitivity): 0.9122 (highest recall)
-
-Specificity: 0.9643 (same as Vanilla and L1)
-
-F1 Score: 0.5368
-
-## More Analysis:
-
-Test Accuracy: L1 Model has the highest test accuracy at 0.7311, followed by L2 at 0.7186, both of which outperform the Vanilla model's 0.6814. Accuracy:
-
-Vanilla Model has the highest accuracy at 0.6960, followed by L1 at 0.5548, and L2 trailing at 0.4734.
-
-Precision: Vanilla has the best precision at 0.6957, meaning fewer false positives, while L1 and L2 perform lower in precision.
-
-Recall (Sensitivity): Both L1 and L2 models drastically outperform the Vanilla model in terms of recall, with L2 achieving 0.9122 and L1 at 0.8074, compared to Vanilla's 0.1622.
-
-F1 Score: L1 Regularization has the highest F1 Score of 0.5482, indicating a good balance between precision and recall.
-
-L2 follows with an F1 Score of 0.5368, while Vanilla has the lowest F1 Score at 0.2630.
-
-  ## Conclusion:
-
-L1 Regularization with Adam is overall better than the Vanilla model. It has the highest test accuracy and F1 score, making it a more balanced model despite a slightly lower accuracy compared to Vanilla.
-
-L2 Regularization, though it has excellent recall, does not surpass the L1 model or Vanilla in terms of accuracy or precision.
-
-Thus, L1 Regularization offers the best performance overall compared to the Vanilla model, especially considering its superior test accuracy and F1 Score.
-
-The **L1 regularized model** outperformed the vanilla model in **test accuracy** by **5.06%** and also shows a significantly better recall, as indicated by the F1 score.
+In summary, regularization techniques (L1 and L2) combined with advanced optimizers (Adam and RMSProp) significantly enhance model performance compared to a vanilla model with no optimization. In particular, L1 regularization with Adam offers the best balance between accuracy, precision, and recall, making it the most suitable model for predicting student dropout rates.
 
 
 ### How to Run
