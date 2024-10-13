@@ -88,30 +88,42 @@ Here’s the performance comparison:
 
 The **L1 regularized model** outperformed the vanilla model in **test accuracy** by **5.06%** (73.11% vs. 68.14%) and also shows a significantly better recall, as indicated by the F1 score.
 
-# How to Run
+
+### How to Run
+
 To set up and run the project, follow these steps:
 
-Clone the repository
-Clone the repository to your local machine using the following commands:
+1. **Clone the repository**  
+   Clone the repository to your local machine using the following commands:
 
-https://github.com/MohamedAYasin/student-dropout-prediction_summative.git
+   ```bash
+   https://github.com/MohamedAYasin/student-dropout-prediction_summative.git
+   
+   ```
 
-cd your-repository
-Create a Virtual Environment
+2. **Create a Virtual Environment**
 
-It’s recommended to create a virtual environment to manage dependencies. You can use either conda or venv:
+It’s recommended to create a virtual environment to manage dependencies. You can use either `venv` or `conda`:
 
-- Using conda:
-conda create --name your_env_name python=3.8
-conda activate your_env_name
+- **Using `venv`:**
 
-- Using venv:
+```bash
   python3 -m venv venv
   source venv/bin/activate   # On macOS/Linux
   venv\Scripts\activate      # On Windows
+```
 
+- **Using conda:**
 
-Install Dependencies
-Install the required dependencies listed in requirements.txt:
+```bash
+conda create --name your_env_name python=3.8
+conda activate your_env_name
+```
 
+3. **Install Dependencies**
+
+Install the required dependencies listed in `requirements.txt`:
+
+```bash
 pip install -r requirements.txt
+```
