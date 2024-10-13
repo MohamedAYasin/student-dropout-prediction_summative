@@ -1,4 +1,4 @@
-# Student dropout prediction summative
+# Student dropout prediction
 
 ![students](https://github.com/user-attachments/assets/63296c73-5b0a-43dc-961a-27b44be53216)
 
