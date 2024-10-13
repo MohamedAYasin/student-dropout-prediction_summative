@@ -1,5 +1,8 @@
 # student-dropout-prediction_summative
 
+![students](https://github.com/user-attachments/assets/63296c73-5b0a-43dc-961a-27b44be53216)
+
+
 
 Here’s the performance comparison in a similar format:
 
