@@ -19,8 +19,6 @@ Test Loss: 1.6278
 
 Test Accuracy: 0.6814
 
-Accuracy: 0.6960 (highest among the models)
-
 Precision: 0.6957
 
 Recall (Sensitivity): 0.1622
@@ -35,8 +33,6 @@ Test Loss: 0.6013 (significantly lower than Vanilla)
 
 Test Accuracy: 0.7311 (higher than Vanilla)
 
-Accuracy: 0.5548
-
 Precision: 0.4149
 
 Recall (Sensitivity): 0.8074 (much higher recall)
@@ -50,8 +46,6 @@ F1 Score: 0.5482 (higher than Vanilla)
 Test Loss: 0.5594 (lowest loss)
 
 Test Accuracy: 0.7186 (higher than Vanilla)
-
-Accuracy: 0.4734 (lower than Vanilla and L1)
 
 Precision: 0.3803
 
@@ -88,8 +82,8 @@ Here’s the performance comparison:
 
 | Model            | Test Loss  | Accuracy  | Precision | Recall (Sensitivity) | F1 Score |
 |------------------|------------|-----------|-----------|----------------------|----------|
-| **Vanilla**       | 1.6278     | 69.60%    | 69.57%    | 16.22%               | 26.30%   |
-| **L1 Regularized**| 0.6013     | 55.48%    | 41.49%    | 80.74%               | 54.82%   |
+| **Vanilla**       | 1.6278     | 68.14%    | 69.57%    | 16.22%               | 26.30%   |
+| **L1 Regularized**| 0.6013     | 73.11%    | 41.49%    | 80.74%               | 54.82%   |
 | **L2 Regularized**| 0.5594     | 47.34%    | 38.03%    | 91.22%               | 53.68%   |
 
-The **L1 regularized model** outperformed the vanilla model in **test accuracy** by **5.06%** (73.11% vs. 68.14%) and also shows a significantly better balance between precision and recall, as indicated by the F1 score.
+The **L1 regularized model** outperformed the vanilla model in **test accuracy** by **5.06%** (73.11% vs. 68.14%) and also shows a significantly better recall, as indicated by the F1 score.
